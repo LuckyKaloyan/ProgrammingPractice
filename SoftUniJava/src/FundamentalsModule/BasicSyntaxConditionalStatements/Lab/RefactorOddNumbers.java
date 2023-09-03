@@ -13,5 +13,5 @@ public class RefactorOddNumbers {
         System.out.println("Sum: " + sum);}
 
 
-    
+
 }
