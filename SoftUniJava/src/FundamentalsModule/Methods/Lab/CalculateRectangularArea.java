@@ -6,7 +6,7 @@ public class CalculateRectangularArea {
         Scanner scanner = new Scanner(System.in);
         rectangle(Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine()));}
 
-    
+
     public static void rectangle(int a, int b) {
         System.out.println(a*b);
     }
