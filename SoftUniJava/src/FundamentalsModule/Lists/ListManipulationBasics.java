@@ -16,35 +16,44 @@ public class ListManipulationBasics {
 
         boolean iftrue = true;
 
-        while(iftrue){
+        while (iftrue) {
             word = scanner.next();
-            if(word.equals("Add")){
-                kokazako=scanner.nextInt();
-                numbers.add(numbers.size(), kokazako);}
+            if (word.equals("Add")) {
+                kokazako = scanner.nextInt();
+                numbers.add(numbers.size(), kokazako);
+            }
 
-            if(word.equals("Remove")){
-                kokazako= scanner.nextInt();
-                for(int i=0; i<numbers.size(); i++){
-                    if(numbers.get(i)==kokazako){numbers.remove(i);
-                        break;}
+            if (word.equals("Remove")) {
+                kokazako = scanner.nextInt();
+                for (int i = 0; i < numbers.size(); i++) {
+                    if (numbers.get(i) == kokazako) {
+                        numbers.remove(i);
+                        break;
+                    }
                 }
             }
 
-            if(word.equals("RemoveAt")){
-                kokazako=scanner.nextInt();
+            if (word.equals("RemoveAt")) {
+                kokazako = scanner.nextInt();
                 numbers.remove(kokazako);
             }
-            if(word.equals("Insert")){kokazako=scanner.nextInt(); kokazako2= scanner.nextInt();
+            if (word.equals("Insert")) {
+                kokazako = scanner.nextInt();
+                kokazako2 = scanner.nextInt();
                 numbers.add(kokazako2, kokazako);
 
 
             }
-            if(word.equals("end")){iftrue = false;}
+            if (word.equals("end")) {
+                iftrue = false;
+            }
 
 
         }
 
 
-        for(int i=0; i<numbers.size(); i++){
-            System.out.print(numbers.get(i)+" ");
+        for (int i = 0; i < numbers.size(); i++) {
+            System.out.print(numbers.get(i) + " ");
         }
+    }
+}
