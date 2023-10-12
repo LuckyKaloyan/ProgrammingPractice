@@ -1,4 +1,4 @@
-package FundamentalsModule.Lists;
+package FundamentalsModule.Lists.Lab;
 
 import java.util.ArrayList;
 import java.util.Collections;
