@@ -1,4 +1,4 @@
-package FundamentalsModule.TextProcessing;
+package FundamentalsModule.TextProcessing.Lab;
 
 import java.util.Scanner;
 public class RepeatString {
