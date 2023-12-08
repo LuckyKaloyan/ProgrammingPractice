@@ -1,4 +1,4 @@
-package AdvancedModule.SetsAndMaps.Lab;
+package AdvancedModule.StacksAndQueues.Lab;
 
 import java.util.ArrayDeque;
 import java.util.Scanner;
