@@ -3,7 +3,6 @@ package AdvancedModule.StacksAndQueues.Lab;
 import java.util.ArrayDeque;
 import java.util.Collections;
 import java.util.Scanner;
-
 public class MathPotato {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -17,6 +16,7 @@ public class MathPotato {
             for (int i = 1; i < nthToss; i++) {
                 queue.offer(queue.poll());
             }
+            String[] names = scanner.nextLine().split(" ");
 
             if (isPrime(cycle)) {
                 System.out.println("Prime " + queue.peek());
