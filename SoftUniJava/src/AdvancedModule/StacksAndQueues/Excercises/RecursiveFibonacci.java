@@ -1,26 +1,19 @@
 package AdvancedModule.StacksAndQueues.Excercises;
-
 import java.util.*;
 public class RecursiveFibonacci {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        ArrayDeque<Long> Fibonacci = new ArrayDeque<>();
-        long N = Integer.parseInt(input.nextLine());
-        System.out.println(getFibonacci(Fibonacci, N));
-    }
-
-    private static Long getFibonacci(ArrayDeque<Long> Fibonacci, Long N) {
-        if(N<2){
-            return 1L;
-        }else {
-            Fibonacci.offer(0L);
-            Fibonacci.offer(1L);
-            for (int i = 0; i < N; i++) {
-                long Sum = Fibonacci.poll()+Fibonacci.peek();
-                Fibonacci.offer(Sum);
-            }
+        Scanner scanner = new Scanner(System.in);
+        ArrayDeque<Long> stack = new ArrayDeque<>();
+        stack.push(Long.parseLong(String.valueOf(1)));
+        stack.push(Long.parseLong(String.valueOf(1)));
+        long input = Long.parseLong(scanner.nextLine());
+        for(int i=1; i<input; i++){
+            long secondnumber = stack.pop();
+            long firstnumber = stack.peek();
+            long thirdnumber = firstnumber+secondnumber;
+            stack.push(secondnumber);
+            stack.push(thirdnumber);
         }
-        Fibonacci.poll();
-        return Fibonacci.peek();
+        System.out.println(stack.peek());
     }
 }
