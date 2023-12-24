@@ -1,45 +1,32 @@
 package AdvancedModule.StacksAndQueues.Excercises;
 
 import java.util.ArrayDeque;
-import java.util.Queue;
 import java.util.Scanner;
 
 public class BasicQueueOperations {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        ArrayDeque<Integer> queue = new ArrayDeque<>();
 
-        String[] inputParams = scanner.nextLine().split(" ");
-        int N = Integer.parseInt(inputParams[0]);
-        int S = Integer.parseInt(inputParams[1]);
-        int X = Integer.parseInt(inputParams[2]);
+        String[] commands = scanner.nextLine().split(" ");
+        String[] stackvalues = scanner.nextLine().split(" ");
 
-        String[] numbers = scanner.nextLine().split(" ");
-
-        Queue<Integer> queue = new ArrayDeque<>();
-
-        for (int i = 0; i < N; i++) {
-            queue.offer(Integer.parseInt(numbers[i]));
-        }
-
-        for (int i = 0; i < S; i++) {
-            if (!queue.isEmpty()) {
-                queue.poll();
-            }
-        }
-
-        if (queue.contains(X)) {
-            System.out.println("true");
-        } else if (!queue.isEmpty()) {
-            int min = Integer.MAX_VALUE;
-            for (int num : queue) {
-                if (num < min) {
-                    min = num;
-                }
-            }
-            System.out.println(min);
-        } else {
+        for(int i=0; i<stackvalues.length; i++){
+            queue.offer(Integer.parseInt(stackvalues[i]));}
+        for(int i=0; i<Integer.parseInt(commands[1]); i++){
+            queue.poll();}
+        if(queue.isEmpty()){
             System.out.println(0);
+        }else if(queue.contains(Integer.parseInt(commands[2]))){
+            System.out.println(true);
+        }else{
+            int smallest = Integer.MAX_VALUE;
+            for(int kep:queue){
+                if(kep<smallest){
+                    smallest=kep;
+                }}
+            System.out.println(smallest);
         }
     }
 }
