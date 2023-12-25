@@ -11,11 +11,8 @@ public class FillTheMatrix {
                 for (int j = 0; j < size; j++) {
                     System.out.print(i + j * size + " ");
                 }
-                System.out.println();
-            }
-        }
+                System.out.println();}}
         if (type.equals("B")) {
-
             for(int i=1; i<=size; i++){
                 for(int j=0; j<size; j++){
                     if(j%2==0){
@@ -25,7 +22,6 @@ public class FillTheMatrix {
                     }
                 }System.out.println();
             }
-
         }
     }
 }
