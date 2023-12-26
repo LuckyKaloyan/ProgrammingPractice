@@ -10,9 +10,8 @@ public class MatrixShuffling {
             arreiche[i]=Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
         }
         int rubber;
-        String command = "";
-        while(!command.equals("END")){
-            command = scanner.nextLine();
+        while(true){
+            String command = scanner.nextLine();
             if(command.equals("END")){break;}
             String[] splitted =  command.split(" ");
 
