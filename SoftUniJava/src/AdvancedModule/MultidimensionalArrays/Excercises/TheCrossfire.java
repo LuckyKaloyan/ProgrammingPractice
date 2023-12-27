@@ -1,54 +1,52 @@
 package AdvancedModule.MultidimensionalArrays.Excercises;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+import java.util.Scanner;
 public class TheCrossfire {
-    public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int[] dimensions = Arrays.stream(reader.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-        int rows = dimensions[0], cols = dimensions[1];
-
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] dimensions = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        int rows = dimensions[0];
+        int cols = dimensions[1];
         List<List<Integer>> matrix = new ArrayList<>();
-        int count = 1;
-
-        for (int row = 0; row < rows; row++) {
-            matrix.add(new ArrayList<>());
-            for (int col = 0; col < cols; col++) {
-                matrix.get(row).add(count++);
+        for (int i = 0; i < rows; i++) {
+            matrix.add(new ArrayList<Integer>());
+            for (int j = 0; j < cols; j++) {
+                matrix.get(i).add(i * cols + j + 1);
             }
         }
-
-        String line;
-        while (!(line = reader.readLine()).equals("Nuke it from orbit")) {
-            String[] data = line.split(" ");
-            int row = Integer.parseInt(data[0]), col = Integer.parseInt(data[1]), radius = Integer.parseInt(data[2]);
-
+        String input = scanner.nextLine();
+        while (!input.equals("Nuke it from orbit")) {
+            int[] command = Arrays.stream(input.split(" ")).mapToInt(Integer::parseInt).toArray();
+            int row = command[0];
+            int col = command[1];
+            int radius = command[2];
             for (int i = row - radius; i <= row + radius; i++) {
-                if (isInRange(i, col, matrix) && i != row)
-                    matrix.get(i).remove(col);
+                if (i >= 0 && i < matrix.size() && col >= 0 && col < matrix.get(i).size()) {
+                    matrix.get(i).set(col, 0);
+                }
             }
-
-            for (int i = col + radius; i >= col - radius; i--) {
-                if (isInRange(row, i, matrix))
-                    matrix.get(row).remove(i);
+            for (int i = col - radius; i <= col + radius; i++) {
+                if (row >= 0 && row < matrix.size() && i >= 0 && i < matrix.get(row).size()) {
+                    matrix.get(row).set(i, 0);
+                }
             }
-
-            matrix.removeIf(List::isEmpty);
+            for (int i = 0; i < matrix.size(); i++) {
+                matrix.get(i).removeIf(e -> e == 0);
+                if (matrix.get(i).isEmpty()) {
+                    matrix.remove(i);
+                    i--;
+                }
+            }
+            input = scanner.nextLine();
         }
-
-        for (List<Integer> integers : matrix) {
-            for (Integer integer : integers) {
-                System.out.print(integer + " ");
+        for (List<Integer> row : matrix) {
+            for (int num : row) {
+                System.out.print(num + " ");
             }
             System.out.println();
         }
-    }
-
-    private static boolean isInRange(int row, int col, List<List<Integer>> matrix) {
-        return row >= 0 && row < matrix.size() && col >= 0 && col < matrix.get(row).size();
     }
 }
