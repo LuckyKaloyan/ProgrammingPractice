@@ -36,7 +36,7 @@ public class ReverseMatrixDiagonals {
          System.out.println();
      }
 
-     
+
 
     }
 }
