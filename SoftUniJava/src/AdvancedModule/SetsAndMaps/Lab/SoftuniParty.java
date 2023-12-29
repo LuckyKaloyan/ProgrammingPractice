@@ -12,7 +12,6 @@ public class SoftuniParty {
                 }else{
                     set.add(guest);
                 }
-
                 guest = scanner.nextLine();
             }
             guest = scanner.nextLine();
