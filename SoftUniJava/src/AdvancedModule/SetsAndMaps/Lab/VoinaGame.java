@@ -19,5 +19,11 @@ public class VoinaGame {
                         .collect(Collectors.toCollection(LinkedHashSet::new));
 
 
+           int firstNumber = firstdeck.iterator().next();
+           firstdeck.remove(firstNumber);
+           int secondNumber = seconddeck.iterator().next();
+           seconddeck.remove(secondNumber);
+           
+
     }
 }
