@@ -14,12 +14,13 @@ public class Phonebook {
              input = scanner.nextLine();
          }
          while(!input.equals("stop")){
+             input = scanner.nextLine();
+             if(input.equals("stop")){break;}
              if(mapche.containsKey(input)){
                  System.out.println(input+" -> "+mapche.get(input));
              }else{
-                 System.out.println("Contact "+input+" does not                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ");
-             }
-             input = scanner.nextLine();
+                 System.out.println("Contact "+input+" does not exist.");}
+
          }
     }
 }
