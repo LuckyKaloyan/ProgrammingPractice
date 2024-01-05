@@ -8,9 +8,9 @@ import java.util.List;
 
 public class WriteFile {
     public static void main(String[] args) throws IOException {
-        FileInputStream kiufte = new FileInputStream("C:\\Users\\User\\Desktop\\Материали\\input.txt");
+        FileInputStream kiufte = new FileInputStream("C:\\Users\\LuckyK\\Desktop\\Directory\\input.txt");
 
-        FileOutputStream kebabche = new FileOutputStream("C:\\Users\\User\\Desktop\\Материали\\output.txt");
+        FileOutputStream kebabche = new FileOutputStream("C:\\Users\\LuckyK\\Desktop\\Directory\\output.txt");
 
 
         List<String> listche = new ArrayList<>();
