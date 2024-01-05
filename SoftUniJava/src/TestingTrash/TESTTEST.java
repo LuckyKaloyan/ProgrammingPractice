@@ -1,6 +1,7 @@
-package AdvancedModule.StreamFilesDirectories.Excercises;
+package TestingTrash;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class TESTTEST {
@@ -9,11 +10,17 @@ public class TESTTEST {
         try{
             FileInputStream inputStream = new FileInputStream("C:\\Users\\LuckyK\\Desktop\\Directory\\Neverx500.txt");
             Scanner scanner = new Scanner(inputStream);
-            String str = scanner.nextLine();
-            System.out.println(str);
+            int oneByte = inputStream.read();
+            while(oneByte>=0){
+                System.out.print(oneByte+" ");
+                oneByte = inputStream.read();
+            }
 
-        }catch(FileNotFoundException ex){
+        }catch(IOException ex){
             System.out.println(ex.getMessage());
+        }finally {
+            System.out.println();
+            System.out.println("cake");
         }
 
 
