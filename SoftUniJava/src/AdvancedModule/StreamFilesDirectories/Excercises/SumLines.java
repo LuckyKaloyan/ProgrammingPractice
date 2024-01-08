@@ -7,15 +7,19 @@ import java.io.IOException;
 public class SumLines {
     public static void main(String[] args) throws IOException {
 
-        BufferedReader kiufte = new BufferedReader(new FileReader("C:\\Users\\User\\Desktop\\Resource\\input.txt"));
+        BufferedReader kiufte = new BufferedReader(new FileReader("C:\\Users\\LuckyK\\Desktop\\Directory\\input.txt"));
 
         
-        int bytes = kiufte.readLine();
+        String bytes = kiufte.readLine();
+        int size = 0;
 
-
-        while(bytes>0){
-
+        while(bytes!=null){
+            for(int i=0; i<bytes.length(); i++){
+                size = size+bytes.charAt(i);
+            }
+         bytes = kiufte.readLine();
         }
+        System.out.println(size);
 
 
 
