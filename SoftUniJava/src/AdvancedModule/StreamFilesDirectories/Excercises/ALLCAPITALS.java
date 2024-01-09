@@ -1,36 +1,22 @@
 package AdvancedModule.StreamFilesDirectories.Excercises;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class ALLCAPITALS {
     public static void main(String[] args) throws IOException {
 
-        BufferedReader kiufte = new BufferedReader(new FileReader("C:\\Users\\User\\Desktop\\Resource\\Exercises Resources\\input.txt"));
-        String bytes = kiufte.readLine();
-        int otherSymbols = 0;
-        int vowels = 0;
-        int punctuationMarks = 0;
+        BufferedReader kebab = new BufferedReader(new FileReader("C:\\Users\\User\\Desktop\\Resource\\input.txt"));
+        BufferedWriter kiufte = new BufferedWriter(new FileWriter("C:\\Users\\User\\Desktop\\Resource\\output.txt"));
 
-        while(bytes!=null){
-            for(int i=0; i<bytes.length(); i++){
-                if(bytes.charAt(i)!=' '){
-                    if(bytes.charAt(i)=='a' || bytes.charAt(i)=='o' || bytes.charAt(i)=='i' || bytes.charAt(i)=='e' || bytes.charAt(i)=='u'){
-                        vowels++;
-                    }else if(bytes.charAt(i)=='!' || bytes.charAt(i)==',' || bytes.charAt(i)=='.' || bytes.charAt(i)=='?'){
-                        punctuationMarks++;
-                    }else{
-                        otherSymbols++;
-                    }
-                }
-            }
-            bytes = kiufte.readLine();
+
+        String line = kebab.readLine();
+
+        while(line!=null){
+            kiufte.write(line+System.lineSeparator());
+            line = kebab.readLine();
         }
-        System.out.printf("Vowels: %d%nOther symbols: %d%nPunctuation: %d",vowels,otherSymbols,punctuationMarks);
 
-
-
-
+        kebab.close();
+        kiufte.close();
     }
 }
