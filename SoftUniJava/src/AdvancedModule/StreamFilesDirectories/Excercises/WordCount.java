@@ -29,7 +29,7 @@ public class WordCount {
             line = kiufte.readLine();
         }
 
-        List<String> keysToRemove = new ArrayList<>();
+
         List<Integer> chislata = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : mapche.entrySet()) {
             chislata.add(entry.getValue());
@@ -40,13 +40,11 @@ public class WordCount {
             for (Map.Entry<String, Integer> entry : mapche.entrySet()) {
                 if (i == entry.getValue()) {
                     karnache.write(entry.getKey() + " - " + i + System.lineSeparator());
-                    keysToRemove.add(entry.getKey());
+                    System.out.println(entry.getKey() + " - " + i + System.lineSeparator());
+                    mapche.remove(entry.getKey());
+                   break;
                 }
             }
-        }
-        
-        for (String key : keysToRemove) {
-            mapche.remove(key);
         }
 
         karnache.close();
