@@ -7,9 +7,7 @@ public class WordCount {
     public static void main(String[] args) throws IOException {
         BufferedReader kebab = new BufferedReader(new FileReader("C:\\Users\\User\\Desktop\\Resource\\Exercises Resources\\words.txt"));
         String[] listche = kebab.readLine().split(" ");
-        
         kebab.close();
-
         BufferedReader kiufte = new BufferedReader(new FileReader("C:\\Users\\User\\Desktop\\Resource\\Exercises Resources\\text.txt"));
         BufferedWriter karnache = new BufferedWriter(new FileWriter("C:\\Users\\User\\Desktop\\Resource\\Exercises Resources\\results.txt"));
         TreeMap<String, Integer> mapche = new TreeMap<>();
@@ -17,38 +15,41 @@ public class WordCount {
         for (String item : listche) {
             mapche.put(item, 0);
         }
-
         String line = kiufte.readLine();
 
         while (line != null) {
-            String[] skara = line.split(" ");
-
-            for (String value : skara) {
-                for (String s : listche) {
-                    if (value.contains(s)) {
-                        mapche.put(s, mapche.get(s) + 1);
+            String[] linesplit = line.split(" ");
+            for (String k : linesplit) {
+                for (String j : listche) {
+                    if (j.equals(k)) {
+                        mapche.put(j, mapche.get(j) + 1);
                     }
                 }
             }
-try {
-    line = kiufte.readLine().toLowerCase();
-}catch(Exception kek){
-    kiufte.close();
-}
+            line = kiufte.readLine();
         }
-        kiufte.close();
 
-        List<String> list = new ArrayList<>();
+        List<String> keysToRemove = new ArrayList<>();
+        List<Integer> chislata = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : mapche.entrySet()) {
-            list.add(entry.getValue() + " " + entry.getKey());
+            chislata.add(entry.getValue());
+        }
+        Collections.sort(chislata);
+        Collections.reverse(chislata);
+        for (int i : chislata) {
+            for (Map.Entry<String, Integer> entry : mapche.entrySet()) {
+                if (i == entry.getValue()) {
+                    karnache.write(entry.getKey() + " - " + i + System.lineSeparator());
+                    keysToRemove.add(entry.getKey());
+                }
+            }
+        }
+        
+        for (String key : keysToRemove) {
+            mapche.remove(key);
         }
 
-        list.sort(Collections.reverseOrder()); // Sort the list in descending order
-
-        for (String wordCount : list) {
-            String[] word = wordCount.split(" ");
-            karnache.write((word[1] + " - " + word[0]) + "\n"); // Writing each word count to the file
-        }
         karnache.close();
+        kiufte.close();
     }
 }
