@@ -28,8 +28,6 @@ public class WordCount {
             }
             line = kiufte.readLine();
         }
-
-
         List<Integer> chislata = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : mapche.entrySet()) {
             chislata.add(entry.getValue());
@@ -40,13 +38,11 @@ public class WordCount {
             for (Map.Entry<String, Integer> entry : mapche.entrySet()) {
                 if (i == entry.getValue()) {
                     karnache.write(entry.getKey() + " - " + i + System.lineSeparator());
-                    System.out.println(entry.getKey() + " - " + i + System.lineSeparator());
                     mapche.remove(entry.getKey());
                    break;
                 }
             }
         }
-
         karnache.close();
         kiufte.close();
     }
