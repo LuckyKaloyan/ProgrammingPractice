@@ -21,11 +21,13 @@ public class EvenOrOdds {
 
         System.out.println(resultString);
     }
+
     public static int[] kek(int a, int b, String s) {
         Predicate<Integer> isOdd = i -> s.equals("odd") && i % 2 != 0;
+        Predicate<Integer> isEven = i -> s.equals("even") && i % 2 == 0;
 
         return IntStream.rangeClosed(a, b)
-                .filter(i -> isOdd.test(i))
+                .filter(i -> isOdd.test(i) || isEven.test(i))
                 .toArray();
     }
 }
