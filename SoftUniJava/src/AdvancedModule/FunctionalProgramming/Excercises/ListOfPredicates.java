@@ -17,6 +17,7 @@ public class ListOfPredicates {
                 collect(Collectors.toList());
 
         BiFunction<Integer, List<Integer>, List<Integer>> bifunction = (number, list) -> {
+
             List<Predicate<Integer>> wtf = new ArrayList<>();
             for(int i:list){
                 Predicate<Integer> predicate = p -> p%i==0;
@@ -37,7 +38,7 @@ public class ListOfPredicates {
                     results.add(i);
                 }
             }
-       return results;
+            return results;
         };
         for(int i:bifunction.apply(n,listche)){
             System.out.print(i+" ");
