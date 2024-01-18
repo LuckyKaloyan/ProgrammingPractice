@@ -5,7 +5,17 @@ public class Car {
     private String model;
     private int horsepower;
 
-    public Car() {
+
+    public Car(String brand){
+        this(brand,"unknown",-1);
+
+    }
+
+    public Car(String brand, String model, int horsepower) {
+        setBrand(brand);
+        setModel(model);
+        setHorsepower(horsepower);
+
     }
 
     public void setBrand(String brand) {
@@ -31,8 +41,9 @@ public class Car {
     public int getHorsepower() {
         return this.horsepower;
     }
+
     @Override
-    public String toString(){
-        return String.format("The car is: %s %s - %d HP.", this.getBrand(), this.getModel(), this.getHorsepower());
+      public String toString(){
+ return String.format("The car is: %s %s - %d HP%n", getBrand(), getModel(), getHorsepower());
     }
 }
