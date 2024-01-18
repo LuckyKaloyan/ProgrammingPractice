@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c2e1459-9057-419e-a0e6-f50ee929aaf7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Car/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/JavaAdvanced/Lab/BankAccount/BankAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/JavaAdvanced/Lab/BankAccount/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Car/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaAdvanced/Lab/Car/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Car/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaAdvanced/Lab/Car/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,11 +52,11 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Car.Main" />
+      <option name="MAIN_CLASS_NAME" value="JavaAdvanced.Lab.Car.Main" />
       <module name="SoftUniJavaOOP" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Car.*" />
+          <option name="PATTERN" value="JavaAdvanced.Lab.Car.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

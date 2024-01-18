@@ -1,4 +1,4 @@
-package Car;
+package JavaAdvanced.Lab.Car;
 
 public class Car {
     private String brand;
