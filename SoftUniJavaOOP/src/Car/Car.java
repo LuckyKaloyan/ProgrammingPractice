@@ -44,6 +44,6 @@ public class Car {
 
     @Override
       public String toString(){
- return String.format("The car is: %s %s - %d HP%n", getBrand(), getModel(), getHorsepower());
+ return String.format("The car is: %s %s - %d HP.%n", getBrand(), getModel(), getHorsepower());
     }
 }
