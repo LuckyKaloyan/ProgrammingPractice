@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c2e1459-9057-419e-a0e6-f50ee929aaf7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/JavaAdvanced/Lab/BankAccount/BankAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JavaAdvanced/Lab/BankAccount/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Car/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaAdvanced/Lab/Car/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Car/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaAdvanced/Lab/Car/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftUniJava/src/AdvancedModule/DefiningClasses/Lab/BankAccount/BankMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Car.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftuniJavaOOP.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JavaAdvanced/Lab/BankAccount/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SoftUniJava/src/AdvancedModule/DefiningClasses/Lab/BankAccount/BankAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JavaAdvanced/Lab/BankAccount/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JavaAdvanced/Lab/Car/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SoftUniJava/src/AdvancedModule/DefiningClasses/Lab/Car/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JavaAdvanced/Lab/Car/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SoftUniJava/src/AdvancedModule/DefiningClasses/Lab/Car/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
