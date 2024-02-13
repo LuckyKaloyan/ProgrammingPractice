@@ -1,28 +1,29 @@
 package Blacksmith;
+
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Scanner;
+
 public class Blacksmith {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-       int[]steel = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-       int[]carbon = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        int[] steel = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        int[] carbon = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
         ArrayDeque<Integer> steelqueue = new ArrayDeque<>();
-        ArrayDeque<Integer>carbonstack = new ArrayDeque<>();
+        ArrayDeque<Integer> carbonstack = new ArrayDeque<>();
 
-        for(int i=0; i<steel.length; i++){
-            steelqueue.add(steel[i]);
+        for (int j : steel) {
+            steelqueue.add(j);
         }
-        for(int i=0; i<carbon.length; i++){
-            carbonstack.push(carbon[i]);
+        for (int j : carbon) {
+            carbonstack.push(j);
         }
         int gladius = 0;
         int shamshir = 0;
         int katana = 0;
         int sabre = 0;
-
 
         while(!steelqueue.isEmpty() && !carbonstack.isEmpty()){
 
@@ -30,9 +31,9 @@ public class Blacksmith {
             int carbonvalue = carbonstack.peek();
 
             if(steelvalue+carbonvalue==70){
-                   gladius++;
-                   steelqueue.poll();
-                   carbonstack.pop();
+                gladius++;
+                steelqueue.poll();
+                carbonstack.pop();
             }else if(steelvalue+carbonvalue==80){
                 shamshir++;
                 steelqueue.poll();
@@ -51,34 +52,43 @@ public class Blacksmith {
                 carbonstack.push(newcarbon);
             }
         }
-        int total = gladius+shamshir+katana+sabre;
-        if(total>0){
-            System.out.println("You have forged "+total+" swords.");
-        }else{
+
+        int total = gladius + shamshir + katana + sabre;
+        if (total > 0) {
+            System.out.println("You have forged " + total + " swords.");
+        } else {
             System.out.println("You did not have enough resources to forge a sword.");
         }
-        if(steelqueue.isEmpty()){
+
+        if (steelqueue.isEmpty()) {
             System.out.println("Steel left: none");
-        }else{
+        } else {
             System.out.print("Steel left: ");
-            for(int i=0; i<steelqueue.size(); i++){
-
-                    System.out.print(steelqueue.poll() + ", ");
+            int steelLeftCount = steelqueue.size();
+            for (Integer steelLeft : steelqueue) {
+                System.out.print(steelLeft);
+                steelLeftCount--;
+                if (steelLeftCount > 0) {
+                    System.out.print(", ");
+                }
             }
-            System.out.print(steelqueue.peek());
-        }
-
-        if(carbonstack.isEmpty()){
-            System.out.println("Carbon left: none");
-        }else{
-            System.out.print("Carbon left: ");
-            for(int i=0; i<=carbonstack.size(); i++){
-                    System.out.print(carbonstack.poll()+", ");
-            }
-            System.out.print(carbonstack.peek());
             System.out.println();
         }
 
+        if (carbonstack.isEmpty()) {
+            System.out.println("Carbon left: none");
+        } else {
+            System.out.print("Carbon left: ");
+            int carbonLeftCount = carbonstack.size();
+            for (Integer carbonLeft : carbonstack) {
+                System.out.print(carbonLeft);
+                carbonLeftCount--;
+                if (carbonLeftCount > 0) {
+                    System.out.print(", ");
+                }
+            }
+            System.out.println();
+        }
         if(gladius!=0){
             System.out.println("Gladius: "+gladius);
         }
@@ -91,9 +101,5 @@ public class Blacksmith {
         if(shamshir!=0){
             System.out.println("Shamshir: "+shamshir);
         }
-
-
-
-
     }
 }
