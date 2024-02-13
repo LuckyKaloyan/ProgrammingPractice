@@ -1,4 +1,4 @@
-package Blacksmith;
+package AdvancedModule.ExamPreparation;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
