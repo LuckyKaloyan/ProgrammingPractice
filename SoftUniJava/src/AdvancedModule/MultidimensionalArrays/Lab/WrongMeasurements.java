@@ -7,7 +7,7 @@ public class WrongMeasurements {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[][] matrix = readMatrix(scanner);
-        int[][] newMatrix = createNewMatrix(matrix, scanner);
+        int[][] newMatrix = makeNewMatrix(matrix, scanner);
         printMatrix(newMatrix);
     }
 
@@ -22,40 +22,52 @@ public class WrongMeasurements {
         return matrix;
     }
 
-    private static int[][] createNewMatrix(int[][] matrix, Scanner scanner) {
+    private static int[][] makeNewMatrix(int[][] matrix, Scanner scanner) {
         int[][] newMatrix = new int[matrix.length][];
         int[] index = Arrays.stream(scanner.nextLine().split("\\s+"))
                 .mapToInt(Integer::parseInt)
                 .toArray();
         int row = index[0];
         int col = index[1];
-        int number = matrix[row][col];
-        for (int i = 0; i < matrix.length; i++) {
-            int[] array = new int[matrix[i].length];
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (matrix[i][j] == number) {
-                    int left = 0, right = 0, up = 0, down = 0;
-                    if (j > 0) left = matrix[i][j - 1];
-                    if (j < matrix[i].length - 1) right = matrix[i][j + 1];
-                    if (i > 0) up = matrix[i - 1][j];
-                    if (i < matrix.length - 1) down = matrix[i + 1][j];
-                    array[j] = left + right + up + down;
+        int wrongNumber = matrix[row][col];
+
+        for (int r = 0; r < matrix.length; r++) {
+            int[] newRow = new int[matrix[r].length];
+            for (int c = 0; c < matrix[r].length; c++) {
+                if (matrix[r][c] == wrongNumber) {
+                    newRow[c] = getCorrectedValue(matrix, r, c, wrongNumber);
                 } else {
-                    array[j] = matrix[i][j];
+                    newRow[c] = matrix[r][c];
                 }
             }
-            newMatrix[i] = array;
+            newMatrix[r] = newRow;
         }
         return newMatrix;
+    }
+
+    private static int getCorrectedValue(int[][] matrix, int row, int col, int wrongNumber) {
+        int sum = 0;
+        if (col > 0 && matrix[row][col - 1] != wrongNumber) {
+            sum += matrix[row][col - 1];
+        }
+        if (col < matrix[row].length - 1 && matrix[row][col + 1] != wrongNumber) {
+            sum += matrix[row][col + 1];
+        }
+        if (row > 0 && matrix[row - 1][col] != wrongNumber) {
+            sum += matrix[row - 1][col];
+        }
+        if (row < matrix.length - 1 && matrix[row + 1][col] != wrongNumber) {
+            sum += matrix[row + 1][col];
+        }
+        return sum;
     }
 
     private static void printMatrix(int[][] matrix) {
         for (int[] row : matrix) {
             for (int cell : row) {
-                System.out.print(cell + " ");
+                System.out.printf("%d ", cell);
             }
             System.out.println();
         }
     }
 }
-
