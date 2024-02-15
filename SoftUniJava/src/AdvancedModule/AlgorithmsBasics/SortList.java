@@ -1,4 +1,4 @@
-package AlgorithmsBasics;
+package AdvancedModule.AlgorithmsBasics;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,19 +15,17 @@ public class SortList {
                                 .map(Integer::parseInt)
                                 .collect(Collectors.toList());
 
-        //{4, 2, 56, 23, 45}
-        Collections.sort(numbers); //sort in ascending order (нарастващ ред)
-        //{2, 4, 23, 45, 56}
+        Collections.sort(numbers);
+
 
         List<Integer> numbersList = Arrays.stream(scanner.nextLine()
                         .split(" "))
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
 
-        //{4, 2, 56, 23, 45}
-        Collections.sort(numbersList); //sort in ascending order (нарастващ ред) -> {2, 4, 23, 45, 56}
-        Collections.reverse(numbersList); //sort in descending order (намаляващ ред)
-        //{56, 45, 23, 4, 2}
+
+        Collections.sort(numbersList);
+        Collections.reverse(numbersList);
 
     }
 }

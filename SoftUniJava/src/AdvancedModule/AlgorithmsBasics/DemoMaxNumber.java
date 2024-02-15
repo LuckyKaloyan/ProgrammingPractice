@@ -1,4 +1,4 @@
-package AlgorithmsBasics;
+package AdvancedModule.AlgorithmsBasics;
 
 import java.util.Arrays;
 import java.util.Scanner;

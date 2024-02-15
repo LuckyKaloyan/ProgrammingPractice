@@ -7,7 +7,6 @@ public class FibonacciRecursion {
         Scanner scanner = new Scanner(System.in);
 
         int n = Integer.parseInt(scanner.nextLine());
-        //F(n) = F(n-1) + F(n-2)
         System.out.println(calcFib(n));
 
     }
