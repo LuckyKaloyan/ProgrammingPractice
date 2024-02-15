@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class SumOfCoins_03 {
+public class SumOfCoins {
     public static void main(String[] args) {
         //10 ст, 5 ст, 2 ст, 1 ст
         Scanner scanner = new Scanner(System.in);

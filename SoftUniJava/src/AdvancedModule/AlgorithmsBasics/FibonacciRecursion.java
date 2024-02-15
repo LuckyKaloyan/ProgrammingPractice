@@ -1,8 +1,8 @@
-package AlgorithmsBasics;
+package AdvancedModule.AlgorithmsBasics;
 
 import java.util.Scanner;
 
-public class FibonacciRecursion_Example {
+public class FibonacciRecursion {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
